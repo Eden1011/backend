@@ -1,4 +1,4 @@
-# Product Catalog API
+# Backend API
 
 A REST API for managing products with attributes across multiple producers.
 
@@ -18,9 +18,13 @@ The application starts on `http://localhost:8080`.
 
 ## Design Notes
 
-Products can have from a few to hundreds of attributes depending on type.
+Products can have from a few to hundreds of attributes depending on type, as requested.
 
-Attributes are stored as typed key/value pairs in a separate `product_attribute_values` table, referencing a shared `attribute_types` dictionary.
+Attributes are stored as typed key/value pairs in a separate `product_attribute_values` table, referencing a shared `attribute_types` dictionary, which avoids wide tables and means adding new attribute types requires no schema changes.
+
+The service layer returns model entities rather than DTOs. Mapping to response DTOs happens in the controller layer via `MapStruct`, which leaves the layer with only simple logic (de-coupled).
+
+Cascade deletes are handled at the ORM level (`orphanRemoval = true` on all `@OneToMany` relationships), so deleting a producer removes its products, and deleting a product removes its attribute values.
 
 The code is structured by feature. Everything related to `products` lives under `feature/products/`, and so on.
 
