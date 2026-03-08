@@ -1,0 +1,9 @@
+repos:
+  - repo: local
+    hooks:
+      - id: spotless
+        name: Spotless (google-java-format)
+        language: system
+        entry: ./mvnw spotless:apply
+        pass_filenames: false
+        types: [java]
