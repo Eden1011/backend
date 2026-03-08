@@ -8,6 +8,8 @@ import pl.backend.assesment.feature.products.model.ProductsModel;
 public interface ProductsServiceInterface {
   List<ProductsModel> getAllProducts();
 
+  List<ProductsModel> searchByName(String name);
+
   ProductsModel getProduct(Long id);
 
   ProductsModel createProduct(ProductCreateRequestDto dto);

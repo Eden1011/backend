@@ -33,6 +33,6 @@ public class ProductsModel {
   @JoinColumn(name = "producer_id", nullable = false)
   private ProducersModel producer;
 
-  @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+  @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
   private Set<ProductsAttributeModel> attributes = new HashSet<>();
 }

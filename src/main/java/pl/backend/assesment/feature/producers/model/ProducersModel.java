@@ -27,6 +27,6 @@ public class ProducersModel {
   @Column(nullable = false, unique = true)
   private String name;
 
-  @OneToMany(mappedBy = "producer", cascade = CascadeType.ALL)
+  @OneToMany(mappedBy = "producer", cascade = CascadeType.ALL, orphanRemoval = true)
   private Set<ProductsModel> products = new HashSet<>();
 }

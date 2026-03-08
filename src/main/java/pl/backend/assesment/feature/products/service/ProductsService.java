@@ -36,6 +36,12 @@ public class ProductsService implements ProductsServiceInterface {
 
   @Override
   @Transactional(readOnly = true)
+  public List<ProductsModel> searchByName(String name) {
+    return productsRepository.searchByNameWithDetails(name);
+  }
+
+  @Override
+  @Transactional(readOnly = true)
   public ProductsModel getProduct(Long id) {
     return getOrThrow(id);
   }

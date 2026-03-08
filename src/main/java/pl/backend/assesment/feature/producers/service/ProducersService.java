@@ -25,6 +25,12 @@ public class ProducersService implements ProducersServiceInterface {
 
   @Override
   @Transactional(readOnly = true)
+  public List<ProducersModel> searchByName(String name) {
+    return producersRepository.findByNameContainingIgnoreCase(name);
+  }
+
+  @Override
+  @Transactional(readOnly = true)
   public ProducersModel getProducer(Long id) {
     return getOrThrow(id);
   }

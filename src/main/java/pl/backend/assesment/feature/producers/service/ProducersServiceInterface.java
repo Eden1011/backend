@@ -7,6 +7,8 @@ import pl.backend.assesment.feature.producers.model.ProducersModel;
 public interface ProducersServiceInterface {
   List<ProducersModel> getAllProducers();
 
+  List<ProducersModel> searchByName(String name);
+
   ProducersModel getProducer(Long id);
 
   ProducersModel createProducer(ProducerCreateRequestDto dto);
