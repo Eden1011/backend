@@ -1,0 +1,24 @@
+meta {
+  name: Update Product
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{baseUrl}}/products/1
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "Galaxy S24 Ultra",
+    "producerId": 1,
+    "attributes": [
+      {
+        "attributeTypeId": 1,
+        "value": "Titanium"
+      }
+    ]
+  }
+}

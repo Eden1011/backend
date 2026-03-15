@@ -31,6 +31,6 @@ public class ProductsAttributeModel {
   @JoinColumn(name = "attribute_type_id", nullable = false)
   private AttributeTypeModel attributeType;
 
-  @Column(nullable = false)
+  @Column(name = "attribute_value", nullable = false)
   private String value;
 }

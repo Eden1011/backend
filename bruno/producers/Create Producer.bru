@@ -1,0 +1,17 @@
+meta {
+  name: Create Producer
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/producers
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "Samsung"
+  }
+}

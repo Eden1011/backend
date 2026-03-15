@@ -1,0 +1,17 @@
+meta {
+  name: Create Attribute Type
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/attribute-types
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "color"
+  }
+}

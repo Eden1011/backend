@@ -1,0 +1,24 @@
+meta {
+  name: Create Product
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/products
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "Galaxy S24",
+    "producerId": 1,
+    "attributes": [
+      {
+        "attributeTypeId": 1,
+        "value": "Black"
+      }
+    ]
+  }
+}

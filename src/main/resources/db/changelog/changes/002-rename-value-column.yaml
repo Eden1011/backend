@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - changeSet:
+      id: 005-rename-value-to-attribute-value
+      author: backend
+      changes:
+        - renameColumn:
+            tableName: product_attribute_values
+            oldColumnName: value
+            newColumnName: attribute_value
+            columnDataType: VARCHAR(255)
