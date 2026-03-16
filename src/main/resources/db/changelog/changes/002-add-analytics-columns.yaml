@@ -1,0 +1,22 @@
+databaseChangeLog:
+  - changeSet:
+      id: 005-add-registered-at-to-producers
+      author: backend
+      changes:
+        - addColumn:
+            tableName: producers
+            columns:
+              - column:
+                  name: registered_at
+                  type: TIMESTAMP
+
+  - changeSet:
+      id: 006-add-created-at-to-products
+      author: backend
+      changes:
+        - addColumn:
+            tableName: products
+            columns:
+              - column:
+                  name: created_at
+                  type: TIMESTAMP

@@ -8,6 +8,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 import lombok.Getter;
@@ -26,6 +27,9 @@ public class ProducersModel {
 
   @Column(nullable = false, unique = true)
   private String name;
+
+  @Column(name = "registered_at")
+  private Date registeredAt;
 
   @OneToMany(mappedBy = "producer", cascade = CascadeType.ALL, orphanRemoval = true)
   private Set<ProductsModel> products = new HashSet<>();

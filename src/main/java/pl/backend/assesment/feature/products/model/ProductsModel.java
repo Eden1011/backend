@@ -10,6 +10,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 import lombok.Getter;
@@ -28,6 +29,9 @@ public class ProductsModel {
 
   @Column(nullable = false)
   private String name;
+
+  @Column(name = "created_at")
+  private Date createdAt;
 
   @ManyToOne
   @JoinColumn(name = "producer_id", nullable = false)
